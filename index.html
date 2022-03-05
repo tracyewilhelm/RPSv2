@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid justify-content-center">
+        <span class="navbar-brand mb-0 h1">ROCK, PAPER, SCISSORS!</span>
+      </div>
+    </nav>
+
+    <section class="rpsImages container-fluid">
+      <div class="weaponChoice">
+        <span class="display-6">Choose your weapon!</span>
+      </div>
+      <div class="d-flex flex-row">
+        <div class="col-4">
+          <button class="imgButton">
+            <img
+              src="./Images/rock.jpg"
+              class="img-fluid"
+              id="rock"
+              alt="rock"
+            />
+          </button>
+        </div>
+
+        <div class="col-4">
+          <button class="imgButton">
+            <img
+              src="./Images/paper.jpg"
+              class="img-fluid"
+              id="paper"
+              alt="piece of paper"
+            />
+          </button>
+        </div>
+        <div class="col-4">
+          <button class="imgButton">
+            <img
+              src="./Images/scissors.jpg"
+              class="img-fluid"
+              id="scissors"
+              alt="silver scissors"
+            />
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="scoreboard">
+      <span id="WLT"></span>
+    </section>
+    <section class="choices container-fluid justify-content-center">
+      <div class="d-flex flex-row">
+        <div class="userChoice choice col-6">
+          <span class="h3" id="userChoice"></span>
+          <img id="userChoiceImg" src="" alt="" height="600px" width="100%" />
+        </div>
+        <div class="comuterChoice choice col-6">
+          <span class="" id="computerChoice"></span>
+          <img
+            id="computerChoiceImg"
+            src=""
+            alt=""
+            height="600px"
+            width="100%"
+          />
+        </div>
+      </div>
+    </section>
+    <script src="./javascript/script.js"></script>
+  </body>
+</html>

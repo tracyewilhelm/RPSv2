@@ -1,0 +1,21 @@
+body {
+  background-color: burlywood;
+  width: 100vw;
+}
+
+.imgButton {
+  margin: 15px;
+  padding: 0px;
+}
+
+.weaponChoice {
+  text-align: center;
+}
+
+.choices {
+  max-width: 100%;
+}
+
+.choice {
+  max-width: 50%;
+}
