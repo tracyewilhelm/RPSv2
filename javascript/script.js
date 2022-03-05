@@ -7,6 +7,8 @@ var paperImageButton = document.querySelector("#paper");
 var scissorsImageButton = document.querySelector("#scissors");
 var userChoice = document.querySelector("#userChoice");
 var userChoiceImgEl = document.querySelector("#userChoiceImg");
+var computerChoice = document.querySelector("#computerChoice");
+var computerChoiceImgEl = document.querySelector("#computerChoiceImg");
 var choiceOptions = document.querySelectorAll(".imgButton");
 
 // Hide the chooseWeapon dive until start button is clicked
@@ -29,24 +31,21 @@ let pickWeapon = function () {
         console.log("you picked rock");
         userChoice.textContent = "You chose rock";
         userChoiceImgEl.src = "./Images/rock.jpg";
-        // return "rock";
       } else if (event.target.id === "paper") {
         console.log("you picked paper");
         userChoice.textContent = "You chose paper";
         userChoiceImgEl.src = "./Images/paper.jpg";
-        // return "paper";
       } else if (event.target.id === "scissors") {
         console.log("you picked scissors");
         userChoice.textContent = "You chose scissors";
         userChoiceImgEl.src = "./Images/scissors.jpg";
-        // return "scissors";
       } else {
         console.log("error");
       }
+      console.log("first function end");
       compChoice();
     });
   }
-  console.log("first function end");
 };
 
 //add a start button. When you click start, run the pickWeapon function
@@ -62,9 +61,28 @@ let compChoice = function () {
   console.log("second function start");
   computerChoice = choice[Math.floor(Math.random() * choice.length)]; //THIS ISN'T A FUNCTION!!
   console.log(computerChoice);
+  // for (let i = 0; i < choice.length; i++) {
+  // console.log(choiceOptions[i]);//it sees each item in the arary
+  // choice[i];
+  // console.log(event.target); //when you click each target it consoles
+  if (computerChoice === "rock") {
+    console.log("Computer picked rock");
+    computerChoice.textContent = "Computer chose rock";
+    computerChoiceImgEl.src = "./Images/rock.jpg";
+  } else if (computerChoice === "paper") {
+    console.log("Computer picked paper");
+    computerChoice.textContent = "Computer chose paper";
+    computerChoiceImgEl.src = "./Images/paper.jpg";
+  } else if (computerChoice === "scissors") {
+    console.log("Computer picked scissors");
+    computerChoice.textContent = "Computer chose scissors";
+    computerChoiceImgEl.src = "./Images/scissors.jpg";
+  } else {
+    console.log("error");
+  }
   console.log("second function end");
 };
-
+// }
 // rock.addEventListener("click", function (event) {
 //   event.preventDefault();
 //   console.log("you picked rock");
