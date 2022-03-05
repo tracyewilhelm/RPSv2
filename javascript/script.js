@@ -1,4 +1,6 @@
 //variables
+let startEl = document.querySelector("#startButton");
+var chooseWeaponEl = document.querySelector("#chooseWeapon");
 var choice = ["rock", "paper", "scissors"];
 var rockImageButton = document.querySelector("#rock");
 var paperImageButton = document.querySelector("#paper");
@@ -6,7 +8,9 @@ var scissorsImageButton = document.querySelector("#scissors");
 var userChoice = document.querySelector("#userChoice");
 var userChoiceImgEl = document.querySelector("#userChoiceImg");
 var choiceOptions = document.querySelectorAll(".imgButton");
-// var rockImage = document.createElement("img");
+
+// Hide the chooseWeapon dive until start button is clicked
+chooseWeaponEl.setAttribute("style", "visibility: hidden");
 
 var score = {
   wins: 0,
@@ -14,32 +18,41 @@ var score = {
   ties: 0,
 };
 
-// let pickWeapon = function () {
-for (let i = 0; i < choiceOptions.length; i++) {
-  // console.log(choiceOptions[i]);//it sees each item in the arary
-  choiceOptions[i].addEventListener("click", function (event) {
-    event.preventDefault();
-    // console.log(event.target); //when you click each target it consoles
-    if (event.target.id === "rock") {
-      console.log("you picked rock");
-      userChoice.textContent = "You chose rock";
-      userChoiceImgEl.src = "./Images/rock.jpg";
-      return "rock";
-    } else if (event.target.id === "paper") {
-      console.log("you picked paper");
-      userChoice.textContent = "You chose paper";
-      userChoiceImgEl.src = "./Images/paper.jpg";
-      return "paper";
-    } else if (event.target.id === "scissors") {
-      console.log("you picked scissors");
-      userChoice.textContent = "You chose scissors";
-      userChoiceImgEl.src = "./Images/scissors.jpg";
-      return "scissors";
-    } else {
-      console.log("error");
-    }
-  });
-}
+let pickWeapon = function () {
+  for (let i = 0; i < choiceOptions.length; i++) {
+    // console.log(choiceOptions[i]);//it sees each item in the arary
+    choiceOptions[i].addEventListener("click", function (event) {
+      event.preventDefault();
+      // console.log(event.target); //when you click each target it consoles
+      if (event.target.id === "rock") {
+        console.log("you picked rock");
+        userChoice.textContent = "You chose rock";
+        userChoiceImgEl.src = "./Images/rock.jpg";
+        return "rock";
+      } else if (event.target.id === "paper") {
+        console.log("you picked paper");
+        userChoice.textContent = "You chose paper";
+        userChoiceImgEl.src = "./Images/paper.jpg";
+        return "paper";
+      } else if (event.target.id === "scissors") {
+        console.log("you picked scissors");
+        userChoice.textContent = "You chose scissors";
+        userChoiceImgEl.src = "./Images/scissors.jpg";
+        return "scissors";
+      } else {
+        console.log("error");
+      }
+    });
+  }
+};
+
+//add a start button. When you click start, run the pickWeapon function
+startEl.addEventListener("click", function () {
+  startEl.setAttribute("hidden", true);
+  chooseWeaponEl.setAttribute("style", "visible");
+  pickWeapon();
+});
+// console.log("I can see the button");
 
 //computer choice - turn this into a function that you call after the user has made their chioce
 let compChoice = function (pickWeapon) {
