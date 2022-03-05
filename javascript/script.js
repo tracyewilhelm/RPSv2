@@ -19,6 +19,7 @@ var score = {
 };
 
 let pickWeapon = function () {
+  console.log("first function start");
   for (let i = 0; i < choiceOptions.length; i++) {
     // console.log(choiceOptions[i]);//it sees each item in the arary
     choiceOptions[i].addEventListener("click", function (event) {
@@ -28,36 +29,40 @@ let pickWeapon = function () {
         console.log("you picked rock");
         userChoice.textContent = "You chose rock";
         userChoiceImgEl.src = "./Images/rock.jpg";
-        return "rock";
+        // return "rock";
       } else if (event.target.id === "paper") {
         console.log("you picked paper");
         userChoice.textContent = "You chose paper";
         userChoiceImgEl.src = "./Images/paper.jpg";
-        return "paper";
+        // return "paper";
       } else if (event.target.id === "scissors") {
         console.log("you picked scissors");
         userChoice.textContent = "You chose scissors";
         userChoiceImgEl.src = "./Images/scissors.jpg";
-        return "scissors";
+        // return "scissors";
       } else {
         console.log("error");
       }
+      compChoice();
     });
   }
+  console.log("first function end");
 };
 
 //add a start button. When you click start, run the pickWeapon function
 startEl.addEventListener("click", function () {
+  console.log("Button clicked!");
   startEl.setAttribute("hidden", true);
   chooseWeaponEl.setAttribute("style", "visible");
   pickWeapon();
 });
-// console.log("I can see the button");
 
 //computer choice - turn this into a function that you call after the user has made their chioce
-let compChoice = function (pickWeapon) {
+let compChoice = function () {
+  console.log("second function start");
   computerChoice = choice[Math.floor(Math.random() * choice.length)]; //THIS ISN'T A FUNCTION!!
   console.log(computerChoice);
+  console.log("second function end");
 };
 
 // rock.addEventListener("click", function (event) {
