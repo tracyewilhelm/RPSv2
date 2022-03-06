@@ -7,8 +7,8 @@ var paperImageButton = document.querySelector("#paper");
 var scissorsImageButton = document.querySelector("#scissors");
 var userChoice = document.querySelector("#userChoice");
 var userChoiceImgEl = document.querySelector("#userChoiceImg");
-var computerChoice = document.querySelector("#computerChoice");
-var computerChoiceImgEl = document.querySelector("#computerChoiceImg");
+let computerChoiceEl = document.querySelector("#computerChoice");
+let computerChoiceImgEl = document.querySelector("#computerChoiceImg");
 var choiceOptions = document.querySelectorAll(".imgButton");
 
 // Hide the chooseWeapon dive until start button is clicked
@@ -67,15 +67,18 @@ let compChoice = function () {
   // console.log(event.target); //when you click each target it consoles
   if (computerChoice === "rock") {
     console.log("Computer picked rock");
-    computerChoice.textContent = "Computer chose rock";
+    computerChoiceEl.textContent = "Computer chose rock";
+    console.log(computerChoiceEl.textContent);
     computerChoiceImgEl.src = "./Images/rock.jpg";
   } else if (computerChoice === "paper") {
     console.log("Computer picked paper");
-    computerChoice.textContent = "Computer chose paper";
+    computerChoiceEl.textContent = "Computer chose paper";
+    console.log(computerChoiceEl.textContent);
     computerChoiceImgEl.src = "./Images/paper.jpg";
   } else if (computerChoice === "scissors") {
     console.log("Computer picked scissors");
-    computerChoice.textContent = "Computer chose scissors";
+    computerChoiceEl.textContent = "Computer chose scissors";
+    console.log(computerChoiceEl.textContent);
     computerChoiceImgEl.src = "./Images/scissors.jpg";
   } else {
     console.log("error");
